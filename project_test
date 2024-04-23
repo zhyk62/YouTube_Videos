@@ -1,0 +1,18 @@
+from cse163_util import assert_equals
+import FinalVersion as pj
+
+
+def main():
+    test_file = 'test_dataset_us.csv'
+    test_cate = 'US_category_id.json'
+    video = pj.open_file(test_file, test_cate)
+
+    assert_equals(len(video), 10)
+    assert_equals(video.shape, (10, 13))
+    assert_equals(video['views'][0], 748374)
+    assert_equals(video['Like View Ratio'][5], 146033/3191434)
+    assert_equals(video['days_from_pub_to_trend'][8], 1)
+
+
+if __name__ == '__main__':
+    main()
